@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Home Page</title>
+</head>
+<body style="background: url({% static 'post_note/pic1.jpg' %});background-repeat:no-repeat;background-size:cover;background-filter:blur(8px);">
+    <div align="right">
+        <a href="{% url 'login' %}"><button style="background-color:black;border:1px;color:white;font-size:20px" type="button" align="right">Login</button></a>
+        <a href="{% url 'register' %}"><button style="background-color:black;border:1px;color:white;font-size:20px" type="button">Register</button></a>
+    </div>
+    <h1 style="color:red;"><center>ONLINE POST IT NOTE</center></h1>
+    <p align="center" style="color:blue;font-size:30px;padding:40px 60px 50px 60px;font-family: sans-serif">
+        Online post it note note is a web application that allows a user to post different kinds of notes and thoughts on his personal
+        dashboard. It requires for the user to register and login into their respective account and add, delete and update
+        different posts. it also serves as a feature to view different posts and send email to their email account given at the time
+        of registration. For loggin in, the user has to first register himself.
+    </p>
+    <h2 style="color:red;" align="left">ABOUT THE PROJECT:</h2>
+    <div align="left" style="color:blue;font-size:25px;padding:40px 800px 50px 0px;font-family: sans-serif">
+            The whole project is developed by Abhishek Kumar Jha, a 3rd year Computer Science and Engineering student and the whole
+            structure and organisation of project is uploaded to a github repository https://github.com/damonavi/webApps/postNote. The project make use
+            of various web development components and uses python django framework for it.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello {{user.username}}</title>
+</head>
+<body style="background: url({% static 'post_note/pic6.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <a href="{% url 'user_info' user.id %}"><h4 style="font-style:sans=serif;color:blue;font-size:20px;" align="right">{{user.username}}</h4></a>
+    <h5 style="font-style:sans=serif;color:blue;font-size:15px;" align="right">{{user.email}}</h5>
+    <div align="right"><a href = "{% url 'home_page' %}"><button style="background-color:purple;border:1px;color:white;font-size:20px;" type="button" align="right">Logout</button> </a></div>
+    <u><h2 style="font-style:sans=serif;color:red;font-size:40px;"><center>Hello, {{user.name}}</center></h2></u>
+    <p align="center" style="color:blue;font-size:30px;padding:40px 100px 50px 100px;font-family: sans-serif;">
+        Welcome to your dashboard, this is the place where all the information about different posts would be present
+        and the option for creating,viewing,deleting of the posts would also be present here. The posts can be identified by
+        its title and the date of creation.
+    </p>
+    <a href = "{% url 'cards' user.id %}"><button style="background-color:brown;border:1px;color:white;font-size:30px;" type="button">Create a new post</button></a><br>
+    <h3 style="font-style:sans=serif;color:red;font-size:35px;"> List of existing posts:</h3>
+    <ul style="font-style:sans=serif;color:blue;font-size:30px;">
+        {% for x in tot %}
+            <li>
+                {{x.title}} posted on {{x.date}} <a href="{% url 'card_desc' user.id x.id %}"><button style="background-color:purple;border:1px;color:white;font-size:20px;" type="button">View</button></a> <a href="{% url 'card_delete' user.id x.id %}"><button style="background-color:purple;border:1px;color:white;font-size:20px;" type="button">Delete</button></a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

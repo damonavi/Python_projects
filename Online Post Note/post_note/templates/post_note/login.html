@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body style="background: url({% static 'post_note/pic7.jpg' %});background-repeat:no-repeat;background-size:cover;">
+   <u><h1 style="font-style:sans=serif;color:red;font-size:45px;" align="center">Login:</h1></u>
+   <div style="font-size:35px;color:blue;font-style:sans-serif;padding:40px 800px 50px 50px">
+     <form method="post">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+         <button style="background-color:black;border:1px;color:white;font-size:30px;" type="submit">Login</button>
+    </form>
+   </div>
+</body>
+</html>

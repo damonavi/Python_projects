@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Desc</title>
+</head>
+<body style="background: url({% static 'post_note/pic5.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <u><h2 style="font-style:sans-serif;color:red;font-size:20px;"><center>Hello {{user.name}}</center></h2></u>
+    <div align="right"><a href = "{% url 'home_page' %}"><button style="background-color:purple;border:1px;color:white;font-size:20px;" type="button" align="right">Logout</button> </a></div>
+    <center><h3 style="font-style:sans-serif;color:green;font-size:25px;">{{obj.title}}</h3></center>
+    <p align="center" style="font-style:sans-serif;color:blue;font-size:20px;">
+        {{obj.description}}
+    </p><br><br><br><br><br>
+    <div align="center">
+    <h2 style="font-style:sans-serif;color:brown;font-size:20px;"><center>Date Created : {{obj.date}}</center></h2>
+    <a href = "{% url 'user_home' user.id %}"><button style="background-color:purple;border:1px;color:white;font-size:15px;" type="button">Back</button> </a>
+    <a href="{% url 'send_mail' user.id obj.id %}"><button style="background-color:purple;border:1px;color:white;font-size:15px;" type="button">Send an email</button> </a>
+    </div>
+</body>
+</html>

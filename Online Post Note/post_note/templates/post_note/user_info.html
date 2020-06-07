@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Info</title>
+</head>
+<body style="background: url({% static 'post_note/pic7.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <div align="right"><a href="{% url 'user_home' user.id %}"><button style="background-color:brown;border:1px;color:white;font-size:20px;" type="submit">Go Back</button></a></div><br>
+    <div align="right"><a href = "{% url 'home_page' %}"><button style="background-color:purple;border:1px;color:white;font-size:20px;" type="button" align="right">Logout</button> </a></div>
+    <div align="center" style="font-style:sans=serif;color:blue;font-size:25px;">
+        <u><h2 style="font-style:sans=serif;color:red;font-size:30px;">Name : {{user.name}}</h2></u>
+        <h3>Username : {{user.username}}</h3>
+        <h3>Email : {{user.email}}</h3>
+        <h3>Date Joined : {{user.date_joined}}</h3>
+    </div>
+</body>
+</html>
